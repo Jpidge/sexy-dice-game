@@ -1,5 +1,5 @@
 /* Sexy Dice Game — minimal service worker (installability + offline cache) */
-const CACHE = "sexy-dice-v2";
+const CACHE = "sexy-dice-v3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icon-maskable.svg"];
 
 self.addEventListener("install", (event) => {
