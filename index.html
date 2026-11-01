@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" id="themeColorMeta" content="#a21caf" />
+<meta name="description" content="A dice game for two consenting adults — roll for actions, positions and explicit instructions, with heat levels from Sweet to BDSM." />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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" />
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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" />
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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" />
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Sexy Dice" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="application-name" content="Sexy Dice" />
+<title>Sexy Dice Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdf4ff; --bg-2:#f3d9fa; --surface:#ffffff; --surface-2:#fdf0fb;
+    --ink:#2e1065; --muted:#7c5c8f; --line:#e9c8f5;
+    --rose:#a21caf; --rose-strong:#86198f; --rose-soft:#fae8ff;
+    --wine:#701a75; --wine-ink:#fdf4ff;
+    --amber:#b96f14; --amber-soft:#ffedd1;
+    --shadow:0 18px 40px rgba(162,28,175,.16); --die-shadow:0 14px 28px rgba(46,16,101,.18);
+  }
+  /* BDSM MODE: whole site flips to deep red / black-red when BDSM is selected (both light & dark systems) */
+  :root.bdsm-mode{
+    --bg:#120304; --bg-2:#2b0608; --surface:#1e0709; --surface-2:#2a0a0d;
+    --ink:#ffeded; --muted:#d89a9a; --line:#5c1a1d;
+    --rose:#e11d2e; --rose-strong:#ff4356; --rose-soft:#3d0a0e;
+    --wine:#450a0a; --wine-ink:#ffe4e6;
+    --amber:#f59e0b; --amber-soft:#331a05;
+    --shadow:0 18px 40px rgba(225,29,46,.22); --die-shadow:0 14px 28px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+  body,.stage,.card,.players-setup,.howto,.die,.btn,.chip,.segmented,.turn-card,.bdsm-note,.bonus,.detail-card,.listen-wrap,.player-row,.consent{transition:background-color .45s ease,border-color .45s ease,color .45s ease,box-shadow .45s ease}
+  @media (prefers-reduced-motion: reduce){ body,.stage,.card,.players-setup,.howto,.die,.btn,.chip,.segmented,.turn-card,.bdsm-note,.bonus,.detail-card,.listen-wrap,.player-row,.consent{transition:none} }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#170826; --bg-2:#240b36; --surface:#2a123f; --surface-2:#33184c;
+      --ink:#f7eefc; --muted:#c9a3dd; --line:#553073;
+      --rose:#e879f9; --rose-strong:#f0abfc; --rose-soft:#3d1a4d;
+      --wine:#e879f9; --wine-ink:#2a0a33;
+      --amber:#ffb86b; --amber-soft:#3a2712;
+      --shadow:0 18px 40px rgba(0,0,0,.45); --die-shadow:0 14px 28px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{font-family:"Outfit",system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(700px 420px at 15% -5%, var(--bg-2), transparent 60%),var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 18px 56px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+  .eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+  h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,8vw,4rem);line-height:.98;margin:14px 0 10px;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--rose)}
+  .lede{color:var(--muted);font-size:1.05rem;max-width:34rem;margin:0}
+  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;justify-content:space-between;margin:26px 0 6px}
+  .field-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .segmented{display:inline-flex;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px;max-width:100%}
+  .segmented button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:.92rem;padding:8px 14px;border-radius:999px;cursor:pointer}
+  .segmented button[aria-pressed="true"]{background:var(--rose);color:#fff}
+  @media (prefers-color-scheme: dark){ .segmented button[aria-pressed="true"]{color:#1d0a12} }
+  .deck-count{font-size:.82rem;color:var(--muted);margin-top:7px}
+  .players-setup{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 18px}
+  .players-setup h2{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+  .players-setup p{margin:0 0 12px;color:var(--muted);font-size:.93rem}
+  .players-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:620px){ .players-grid{grid-template-columns:1fr} }
+  .player-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+  .player-row strong{font-size:.95rem}
+  .player-row .anat-note{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+  .turn{text-align:right;flex:0 0 auto;min-width:0}
+  .turn-card{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);padding:8px 14px 8px 9px;border-radius:999px;font-weight:600;font-size:.95rem;white-space:nowrap;flex-wrap:nowrap;max-width:100%}
+  .turn-card #turnText{white-space:nowrap}
+  .avatar{width:28px;height:28px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;background:var(--rose-soft);color:var(--rose-strong);font-size:.8rem;font-weight:800}
+  @media (max-width:620px){
+    .controls{flex-wrap:nowrap;gap:8px}
+    .controls>div:first-child{flex:1 1 auto;min-width:0}
+    .controls .segmented{flex-wrap:nowrap;border-radius:999px;padding:3px;gap:1px;max-width:100%}
+    .controls .segmented button{padding:6px 7px;font-size:.82rem;white-space:nowrap}
+    .turn{text-align:right}
+    .turn-card{padding:6px 10px 6px 6px;gap:6px;font-size:.85rem}
+    .turn-card .avatar{width:22px;height:22px;font-size:.72rem}
+  }
+  @media (max-width:380px){
+    .controls{gap:6px}
+    .controls .segmented button{padding:6px 5px;font-size:.78rem}
+    .turn-card{padding:5px 8px 5px 5px;gap:5px;font-size:.8rem}
+  }
+  .stage{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:26px 20px 22px}
+  .dice-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;max-width:520px;margin:0 auto}
+  .die-wrap{text-align:center}
+  .die{aspect-ratio:1/1;width:100%;max-width:190px;margin:0 auto;border-radius:22%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;text-align:center;cursor:pointer;user-select:none;box-shadow:var(--die-shadow), inset 0 2px 0 rgba(255,255,255,.35), inset 0 -10px 22px rgba(0,0,0,.08);transition:transform .15s ease;position:relative;overflow:hidden}
+  .die:active{transform:scale(.97)}
+  .die-action{background:var(--surface-2);border:2px solid var(--rose);color:var(--ink)}
+  .die-where{background:var(--wine);color:var(--wine-ink);border:2px solid var(--wine)}
+  .die .pips{display:flex;gap:5px}.die .pips i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.55;display:block}
+  .die-word{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.2rem,4.8vw,1.75rem);line-height:1.05}
+  .die-sub{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  .plus{font-family:"DM Serif Display",Georgia,serif;font-size:2rem;color:var(--rose);line-height:1;padding-bottom:28px}
+  .die-caption{margin-top:12px;font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  .die-caption strong{display:block;color:var(--ink);font-size:.72rem}
+  @keyframes tumble{0%{transform:rotate(0deg) translateY(0)}20%{transform:rotate(-7deg) translateY(-10px)}40%{transform:rotate(6deg) translateY(2px)}60%{transform:rotate(-5deg) translateY(-7px)}80%{transform:rotate(4deg) translateY(0)}100%{transform:rotate(0deg)}}
+  .die.rolling{animation:tumble .72s ease-in-out}
+  @media (prefers-reduced-motion: reduce){ .die.rolling{animation:none} *{scroll-behavior:auto!important} }
+  .result{min-height:86px;text-align:center;padding:22px 8px 4px}
+  .result-sentence{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.45rem,5.2vw,2rem);line-height:1.25;margin:0}
+  .result-sentence .a{color:var(--rose)}
+  .placeholder{color:var(--muted);font-family:"Outfit",sans-serif;font-size:1.05rem}
+  .bdsm-note{display:none;margin:14px auto 0;max-width:520px;text-align:left;background:var(--rose-soft);border:1px solid var(--rose);border-radius:14px;padding:12px 14px;font-size:.93rem}
+  .bdsm-note.show{display:block}
+  .bdsm-toggle{appearance:none;background:transparent;border:0;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:0;font:inherit;font-weight:700;text-align:left}
+  .bdsm-chevron{font-size:1.05rem;color:var(--rose-strong);transition:transform .25s ease;flex:0 0 auto;line-height:1}
+  .bdsm-toggle[aria-expanded="true"] .bdsm-chevron{transform:rotate(180deg)}
+  .bdsm-content{margin-top:9px}
+  @media (prefers-reduced-motion: reduce){ .bdsm-chevron{transition:none} }
+  .bonus{display:none;margin:16px auto 2px;max-width:520px;text-align:left;background:var(--amber-soft);border:1px solid var(--amber);border-radius:16px;padding:14px 16px}
+  .bonus.show{display:block}
+  .bonus-tag{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--amber)}
+  .bonus h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:1.35rem;margin:4px 0 4px}
+  .bonus p{margin:0;color:var(--ink);opacity:.88;font-size:.95rem}
+  .detail-card{display:none;margin:16px auto 2px;max-width:520px;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .detail-card.show{display:block}
+  .detail-label{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--rose);margin:0 0 6px}
+  .detail-card p.detail-text{margin:0;font-size:.98rem}
+  .detail-divider{border:0;border-top:1px dashed var(--line);margin:14px 0}
+  .actions{display:flex;gap:10px;justify-content:center;flex-wrap:nowrap;margin-top:18px;width:100%;max-width:520px;margin-left:auto;margin-right:auto}
+  .actions .btn{flex:1 1 0;min-width:0;display:inline-flex;align-items:center;justify-content:center;text-align:center;padding-left:12px;padding-right:12px;white-space:nowrap}
+  @media (max-width:480px){ .actions{gap:8px} .actions .btn{padding:12px 8px;font-size:.95rem} }
+  .btn{appearance:none;font:inherit;font-weight:700;cursor:pointer;border-radius:999px;padding:14px 28px;font-size:1.02rem;border:1px solid transparent}
+  .btn-primary{background:var(--rose);color:#fff;box-shadow:0 10px 24px rgba(155,27,49,.28)}
+  .btn-primary:hover{background:var(--rose-strong)} .btn-primary:disabled{opacity:.65;cursor:wait}
+  :root.bdsm-mode .btn-primary{color:#fff} :root.bdsm-mode .segmented button[aria-pressed="true"]{color:#fff}
+  @media (prefers-color-scheme: dark){ .btn-primary{color:#2a0a33} .btn-primary:hover{color:#2a0a33} } :root.bdsm-mode .btn-primary,:root.bdsm-mode .btn-primary:hover{color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)} .btn-ghost:hover{border-color:var(--rose);color:var(--rose)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  @media (max-width:620px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px}
+  .card h2{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .timer-display{font-family:"DM Serif Display",Georgia,serif;font-size:2.6rem;line-height:1;text-align:center;margin:4px 0 12px;font-variant-numeric:tabular-nums}
+  .timer-bar{height:7px;background:var(--rose-soft);border-radius:99px;overflow:hidden;margin-bottom:14px}
+  .timer-bar i{display:block;height:100%;width:100%;background:var(--rose);border-radius:99px;transition:width .3s linear}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+  .chip{appearance:none;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;padding:7px 13px}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .timer-btns{display:flex;gap:8px;justify-content:center;margin-top:12px} .timer-btns .btn{padding:9px 18px;font-size:.92rem}
+  .history-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .history-list li{display:flex;gap:10px;align-items:baseline;font-size:.95rem;padding-bottom:9px;border-bottom:1px dashed var(--line)}
+  .history-list li:last-child{border-bottom:0;padding-bottom:0}
+  .history-list .who{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--rose);white-space:nowrap}
+  .history-empty{color:var(--muted);font-size:.95rem;margin:0}
+  .howto{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px}
+  .howto h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:1.5rem;margin:0 0 10px}
+  .howto ol{margin:0;padding-left:1.25rem;color:var(--ink)} .howto ol li{margin:6px 0} .howto ol li::marker{color:var(--rose);font-weight:700}
+  .consent{margin-top:14px;border-left:3px solid var(--rose);background:var(--surface-2);padding:12px 14px;border-radius:0 12px 12px 0;font-size:.95rem;color:var(--muted)}
+  .consent strong{color:var(--ink)}
+
+  .listen-wrap{display:none;margin:14px auto 0;max-width:520px;text-align:center;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:14px 16px 12px;color:var(--ink)}
+  .listen-wrap.show{display:block}
+  .listen-row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+  .btn-listen{background:#ffffff;color:#2e1065;border:1px solid #a21caf}
+  .btn-listen:hover{background:#fdf0fb;border-color:#86198f;color:#2e1065}
+  .btn-listen.speaking{background:#f5d0fe;color:#2e1065;border-color:#86198f}
+  .listen-wrap .btn-ghost{background:#ffffff;color:#2e1065;border-color:#d8b4e8}
+  .listen-wrap .btn-ghost:hover{border-color:#a21caf;color:#2e1065}
+  .listen-note{font-size:.85rem;color:var(--ink);opacity:.88;margin-top:7px;min-height:1.1em}
+  :root.bdsm-mode .btn-listen{background:#ffffff;color:#450a0a;border-color:#e11d2e}
+  :root.bdsm-mode .btn-listen:hover{background:#fff1f2;border-color:#be123c;color:#450a0a}
+  :root.bdsm-mode .btn-listen.speaking{background:#fecdd3;color:#450a0a;border-color:#be123c}
+  :root.bdsm-mode .listen-wrap .btn-ghost{background:#ffffff;color:#450a0a;border-color:#fda4af}
+  :root.bdsm-mode .listen-wrap .btn-ghost:hover{border-color:#e11d2e;color:#450a0a}
+  :root.bdsm-mode .listen-note{color:var(--ink)}
+  .voice-setup{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px}
+  .voice-setup h2{font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .voice-setup p{margin:0 0 12px;color:var(--muted);font-size:.93rem}
+  .voice-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;justify-content:space-between}
+  .voice-select{font:inherit;font-size:.95rem;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);max-width:100%}
+
+  .howto-toggle{appearance:none;background:transparent;border:0;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:0;font-family:"DM Serif Display",Georgia,serif;font-size:1.5rem;line-height:1.2;text-align:left}
+  .howto-chevron{font-family:"Outfit",sans-serif;font-size:1.1rem;color:var(--rose);transition:transform .25s ease;flex:0 0 auto}
+  .howto-toggle[aria-expanded="true"] .howto-chevron{transform:rotate(180deg)}
+  .howto-content{margin-top:12px}
+  @media (prefers-reduced-motion: reduce){ .howto-chevron{transition:none} }
+  .install-section{scroll-margin-top:16px}
+  .install-intro{color:var(--muted);font-size:1rem;margin:0 0 16px}
+  .install-intro strong{color:var(--ink)}
+  .install-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 16px}
+  .install-icon{width:56px;height:56px;border-radius:14px;box-shadow:var(--die-shadow);flex:0 0 auto}
+  .install-status{font-size:.95rem;color:var(--muted);flex:1 1 200px;min-width:0}
+  .install-status strong{color:var(--rose-strong)}
+  .install-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:620px){ .install-cols{grid-template-columns:1fr} }
+  .install-cols h3{font-size:1rem;margin:0 0 8px;color:var(--ink)}
+  .install-cols ol{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.95rem}
+  .install-cols ol li{margin:6px 0}
+  .install-cols li strong{color:var(--ink)}
+  .install-note{margin-top:16px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.92rem;color:var(--muted)}
+  .install-note strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">A game for two</div>
+  <h1>Roll for <em>each other.</em></h1>
+  <p class="lede">Take turns rolling both dice. One tells you what to do, the other tells you exactly where.</p>
+
+  <section class="players-setup" aria-label="Player anatomy — set what each player has">
+    <div class="players-grid">
+      <div class="player-row">
+        <span><strong>Partner One</strong><span class="anat-note" id="note1">Has a dick — receives dick-specific rolls</span></span>
+        <div class="segmented" role="group" aria-label="Partner One anatomy">
+          <button type="button" data-anatomy="1:cock" aria-pressed="true">🍆 Dick</button>
+          <button type="button" data-anatomy="1:pussy" aria-pressed="false">🐱 Pussy</button>
+        </div>
+      </div>
+      <div class="player-row">
+        <span><strong>Partner Two</strong><span class="anat-note" id="note2">Has a pussy — receives pussy-specific rolls</span></span>
+        <div class="segmented" role="group" aria-label="Partner Two anatomy">
+          <button type="button" data-anatomy="2:cock" aria-pressed="false">🍆 Dick</button>
+          <button type="button" data-anatomy="2:pussy" aria-pressed="true">🐱 Pussy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div>
+      <div class="field-label" id="heatLabel">Heat level</div>
+      <div class="segmented" role="group" aria-labelledby="heatLabel">
+        <button type="button" data-heat="sweet" aria-pressed="false">Sweet</button>
+        <button type="button" data-heat="spicy" aria-pressed="true">Spicy</button>
+        <button type="button" data-heat="wild" aria-pressed="false">Wild</button>
+        <button type="button" data-heat="bdsm" aria-pressed="false">BDSM</button>
+      </div>
+    </div>
+    <div class="turn">
+      <div class="turn-card"><span class="avatar" id="turnAvatar">1</span><span id="turnText">P1's turn</span></div>
+    </div>
+  </div>
+
+  <section class="stage" aria-label="Dice">
+    <div class="dice-row">
+      <div class="die-wrap">
+        <div class="die die-action" id="dieAction" role="button" tabindex="0" aria-label="Action die — tap to roll both dice">
+          <span class="die-sub">Do this</span>
+          <span class="die-word" id="dieActionWord">Slow Kiss</span>
+          <span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="die-caption">Die One<strong>Action</strong></div>
+      </div>
+      <div class="plus" aria-hidden="true">+</div>
+      <div class="die-wrap">
+        <div class="die die-where" id="dieWhere" role="button" tabindex="0" aria-label="Where die — tap to roll both dice">
+          <span class="die-sub">Right here</span>
+          <span class="die-word" id="dieWhereWord">Neck</span>
+          <span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="die-caption">Die Two<strong>Where</strong></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="rollBtn" type="button">🎲 &nbsp;Roll the Dice</button>
+      <button class="btn btn-ghost" id="skipBtn" type="button">Skip &amp; Reroll</button>
+    </div>
+
+    <div class="result" aria-live="polite">
+      <p class="result-sentence" id="resultSentence"><span class="placeholder">Tap Roll — your first move is waiting.</span></p>
+      <div class="bdsm-note" id="bdsmNote"><button type="button" class="bdsm-toggle" id="bdsmToggle" aria-expanded="false" aria-controls="bdsmContent"><span>BDSM check-in</span><span class="bdsm-chevron" aria-hidden="true">▾</span></button><div class="bdsm-content" id="bdsmContent" hidden><strong>This level is the dirtiest on purpose:</strong> agree a safeword before you start — “Red” means stop completely, “Yellow” means slow down / lighten up. No restricting breathing, nothing on the face or front of the neck, check fingers stay warm and pink if wrists are restrained, use barriers for mouth-on-ass play, and never leave a bound partner alone. <strong>Too weird, too much, or just not your kink? Hit Skip &amp; Reroll — no explanation needed, ever. Skipping IS playing BDSM correctly.</strong></div></div>
+    </div>
+
+    <div class="detail-card" id="detailCard">
+      <p class="detail-label" id="detailDoLabel">DO THIS</p>
+      <p class="detail-text" id="detailDoText"></p>
+      <hr class="detail-divider" />
+      <p class="detail-label" id="detailWhereLabel">WHERE</p>
+      <p class="detail-text" id="detailWhereText"></p>
+    </div>
+
+    <div class="bonus" id="bonusCard" role="status">
+      <div class="bonus-tag" id="bonusTag">Matching faces! Bonus position</div>
+      <h3 id="bonusTitle"></h3>
+      <p id="bonusText"></p>
+    </div>
+
+    <div class="listen-wrap" id="listenWrap">
+      <div class="listen-row">
+        <button type="button" class="btn btn-listen" id="listenBtn">🔊 Read this roll aloud</button>
+        <button type="button" class="btn btn-ghost" id="stopSpeakBtn" style="display:none">⏹ Stop reading</button>
+      </div>
+      <div class="listen-note" id="listenNote">Hands busy? Tap to listen.</div>
+    </div>
+
+  </section>
+
+  <div class="grid">
+    <section class="card" aria-label="Turn timer">
+      <h2>Turn timer</h2>
+      <div class="timer-display" id="timerDisplay">0:30</div>
+      <div class="timer-bar" aria-hidden="true"><i id="timerBar"></i></div>
+      <div class="chips" role="group" aria-label="Timer length">
+        <button type="button" class="chip" data-secs="30" aria-pressed="true">30 sec</button>
+        <button type="button" class="chip" data-secs="60" aria-pressed="false">1 min</button>
+        <button type="button" class="chip" data-secs="120" aria-pressed="false">2 min</button>
+      </div>
+      <div class="timer-btns">
+        <button type="button" class="btn btn-ghost" id="timerToggle">Start</button>
+        <button type="button" class="btn btn-ghost" id="timerReset">Reset</button>
+      </div>
+    </section>
+    <section class="card" aria-label="Tonight's rolls">
+      <h2>Tonight's rolls</h2>
+      <p class="history-empty" id="historyEmpty">Nothing rolled yet — your history for this session will show up here.</p>
+      <ol class="history-list" id="historyList"></ol>
+    </section>
+  </div>
+
+
+
+  <section class="voice-setup" aria-label="Read-aloud voice personalities">
+    <h2>Read-aloud voice — for when you're too busy to read</h2>
+    <div class="voice-controls">
+      <div>
+        <div class="field-label" id="vpLabel">Voice personality</div>
+        <div class="segmented" role="group" aria-labelledby="vpLabel">
+          <button type="button" data-vpreset="sweet" aria-pressed="false">🍬 Sweet</button>
+          <button type="button" data-vpreset="sultry" aria-pressed="true">🔥 Sultry</button>
+          <button type="button" data-vpreset="dominant" aria-pressed="false">⛓️ Dominant</button>
+        </div>
+        <div class="deck-count" id="vpresetDesc">Sultry: slow, low and breathy — reads it like she means it.</div>
+      </div>
+      <div>
+        <div class="field-label" id="voiceSelLabel">Device voice</div>
+        <select class="voice-select" id="voiceSelect" aria-labelledby="voiceSelLabel"><option value="">Auto (personality picks)</option></select>
+        <div class="deck-count" id="voiceCount"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="howto">
+    <button type="button" class="howto-toggle" id="howtoToggle" aria-expanded="false" aria-controls="howtoContent"><span>How to play</span><span class="howto-chevron" aria-hidden="true">▾</span></button>
+    <div class="howto-content" id="howtoContent" hidden>
+    <ol>
+      <li><strong>Set the anatomy toggles</strong> at the top — Dick or Pussy for each partner. Oral, fucking, and BDSM torture rolls are then written for the receiving partner's actual body: sucking dick and playing with balls vs. eating pussy and working the clit.</li>
+      <li><strong>Pick a heat level</strong> together. <strong>Sweet</strong> = soft. <strong>Spicy</strong> = properly dirty now — explicit blowjob / eating-out technique, fucking instructions, and experimental positions. <strong>Wild</strong> = dirtier still. <strong>BDSM</strong> = the dirtiest, kinkiest, most experimental level of all. Change it mid-game anytime.</li>
+      <li><strong>Take turns rolling.</strong> The player whose turn it is performs the action on their partner — the instruction is written for that direction, giver to receiver.</li>
+      <li><strong>Start the timer</strong> and keep going until it runs out — 30 seconds is the classic round, longer for fucking, Wild, and BDSM rolls.</li>
+      <li><strong>Roll matching faces?</strong> You unlock a bonus card — on Spicy that's an experimental fucking position described step-by-step; on BDSM it's a full kink scene.</li>
+      <li><strong>On BDSM:</strong> agree your safeword out loud before the first BDSM roll, and check in (“still green?”) between rolls. Notice the whole page turns red/black on BDSM — that is your visual warning that you are on the dirtiest level. Switching back to Sweet / Spicy / Wild restores the purple/pink theme.</li>
+      <li><strong>Too busy to read?</strong> Tap <em>Read this roll aloud</em> under the dice — pick a voice personality above (Sweet, Sultry, or Dominant) and your device will read the full roll out loud, intro and all. Tap Stop anytime; a new roll silences the old one automatically.</li>
+      <li><strong>Swap turns</strong> and keep rolling for as long as you're both having fun.</li>
+    </ol>
+    <div class="consent"><strong>Skip is a feature, not a failure:</strong> either of you can hit <em>Skip &amp; Reroll</em> on ANY roll — too weird, too kinky, too much, wrong mood — no questions, no justification, no penalty. Especially on BDSM: if a roll isn't your kink, skip it and roll again. A safeword stops everything instantly. The best version of this game is the one you both keep saying yes to.</div>
+    </div>
+  </section>
+
+  <section class="howto install-section" id="install" aria-label="Install it as an app">
+    <button type="button" class="howto-toggle" id="installToggle" aria-expanded="false" aria-controls="installContent"><span>Install it as an app</span><span class="howto-chevron" aria-hidden="true">▾</span></button>
+    <div class="howto-content" id="installContent" hidden>
+      <p class="install-intro">This game is a proper installable web app — add it once and it gets its own <strong>Sexy Dice</strong> icon on your home screen, opens full-screen in its own window (no browser bars), and uses the purple/pink theme colour. No app store, no download file.</p>
+      <div class="install-row">
+        <img class="install-icon" src="data:image/png;base64,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" alt="Sexy Dice app icon — two dice, one white and one deep purple, on a purple background" width="56" height="56" />
+        <span class="install-status" id="installStatus">Use the steps below for your phone — Android installs from Chrome, iPhone from Safari. It takes about ten seconds.</span>
+      </div>
+      <div class="install-cols">
+        <div>
+          <h3>Android — Chrome (recommended)</h3>
+          <ol>
+            <li>Open this game in <strong>Chrome</strong> on your phone.</li>
+            <li>Tap the <strong>⋮ menu</strong> (top right).</li>
+            <li>Tap <strong>“Install app”</strong> — if you see “Add to Home screen” instead, tap that and confirm.</li>
+            <li>Tap <strong>Install</strong>. The dice icon lands on your home screen and in your app drawer, and it launches full-screen like a native app.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>iPhone — Safari</h3>
+          <ol>
+            <li>Open this game in <strong>Safari</strong>.</li>
+            <li>Tap the <strong>Share</strong> button.</li>
+            <li>Tap <strong>“Add to Home Screen”</strong>, keep the name <strong>Sexy Dice</strong>, and tap <strong>Add</strong>.</li>
+            <li>Launch it from the home-screen icon — it opens standalone, without Safari bars.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="install-note"><strong>About a real Android .apk:</strong> this page itself is not an .apk file and there is nothing to download here. It is built Android-ready — installable manifest, 192px &amp; 512px icons including a maskable icon, and standalone display — so it can later be wrapped into a signed .apk (a TWA / Trusted Web Activity package) using these same name, icons and colours. That wrapper is a separate follow-on build; installing from Chrome above gives you the same full-screen app experience right now.</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var DATA = {
+    sweet: {
+      actions: [
+        {word:"Kiss", phrase:"Kiss", detail:"Give 10 slow kisses in a row. Pause a full second between each one and hold eye contact in the gaps."},
+        {word:"Caress", phrase:"Caress", detail:"Use the flat of your whole hand, not just fingertips. Three long passes, each one slower than the last."},
+        {word:"Massage", phrase:"Massage", detail:"Knead in small slow circles for the full turn — thumbs doing the work, steady medium pressure, no rushing."},
+        {word:"Whisper To", phrase:"Whisper something sweet to", detail:"Get close enough that your lips brush skin as you talk. Say one specific thing you actually love about them — no generics."},
+        {word:"Stroke", phrase:"Gently stroke", detail:"Long strokes in one direction only, for a count of 20. Lift your hand fully at the end of each pass before starting again."},
+        {word:"Hold Close", phrase:"Hold close and sway with", detail:"Pull them fully against you and sway slowly for the whole timer, your chin resting where it naturally lands."},
+        {word:"Nuzzle", phrase:"Nuzzle", detail:"Use your nose and lips, no hands. Wander slowly for the full turn and finish with one soft kiss."},
+        {word:"Kiss Trail", phrase:"Leave a trail of kisses along", detail:"Plant a kiss every inch or so along the whole area — at least 12 kisses — without skipping or hurrying the last few."},
+        {word:"Feather Touch", phrase:"Barely touch, feather-light, across", detail:"So light they have to concentrate to feel it. Alternate fingertips and the back of your hand for the full turn."},
+        {word:"Brush Lips Over", phrase:"Brush your lips back and forth over", detail:"Mouth barely closed, barely touching. Cross the same spot 10 times, slower each time."},
+        {word:"Trace Hearts", phrase:"Trace slow hearts with your fingertip on", detail:"Draw three full, unhurried hearts, then kiss the exact centre of the last one."},
+        {word:"Press & Hold", phrase:"Press your palm flat and hold it warm against", detail:"Don't move at all for a count of 15 — just warmth and pressure — then finish with one slow circle."}
+      ],
+      wheres: [
+        {word:"Lips", phrase:"your partner's lips", hint:"Soft and unhurried — let the last one linger a full three seconds longer than the others."},
+        {word:"Neck", phrase:"your partner's neck", hint:"Work the side of the neck from jaw to shoulder. Slow down — the neck notices everything."},
+        {word:"Cheek", phrase:"your partner's cheek", hint:"Start at the cheekbone and work down toward the corner of their smile."},
+        {word:"Back", phrase:"your partner's back", hint:"Whole palm, long strokes from between the shoulder blades all the way down and back up."},
+        {word:"Hands", phrase:"your partner's hands", hint:"Trace each finger one at a time, then interlace your fingers and hold on for the rest of the turn."},
+        {word:"Shoulder", phrase:"your partner's shoulder", hint:"Warm hands, steady pressure — start at the top of the shoulder and ease out toward the arm."},
+        {word:"Forehead", phrase:"your partner's forehead", hint:"Smooth slowly from the centre outward, then rest there — foreheads are weirdly intimate."},
+        {word:"Hair", phrase:"your partner's hair", hint:"Run your fingers from the front hairline all the way back, nails grazing the scalp lightly, again and again."},
+        {word:"Ear", phrase:"your partner's ear", hint:"Trace the outer rim first, slowly, before you get any closer. Watch what that does."},
+        {word:"Collarbone", phrase:"your partner's collarbone", hint:"Follow the exact line of the bone end to end, then reverse direction and come back."},
+        {word:"Waist", phrase:"your partner's waist", hint:"Hands at both sides, thumbs meeting at the small of the back. Hold them like you mean to keep them."},
+        {word:"Arm", phrase:"your partner's arm", hint:"Start at the wrist and travel slowly to the shoulder — the inner arm is far more sensitive than the outer."}
+      ]
+    },
+    spicy: {
+      actions: [
+        {word:"Suck Dick", wordCock:"Suck Dick", wordPussy:"Eat Pussy", phraseCock:"Get on your knees, wrap your lips around and suck", phrasePussy:"Get between her legs, spread her open and eat", detailCock:"HOW TO SUCK HIS DICK: Start by licking the full shaft base-to-tip, kiss the head, then take the head in your mouth and swirl your tongue around it. Bob with suction — cheeks slightly hollowed — while your hand strokes the wet shaft in rhythm and your other hand cups and rolls his balls. Mix it up: slow deep takes as far as you comfortably can, then fast shallow sucks on just the head, tongue flicking the frenulum (the sensitive V underneath). Dirty talk between sucks: 'You taste so fucking good — feel how wet my mouth is for you?' Keep eye contact looking up. No teeth — lips over teeth, always.", detailPussy:"HOW TO EAT HER PUSSY: Spread her lips open with two fingers and look first — find the clit at the top. Start wide and flat: long tongue licks from entrance to clit, then focus in. Circle the clit, flick it tip-of-tongue, then suck it gently between your lips while your tongue keeps flicking. Slide two fingers inside, curl them up in a come-here motion against the front wall while your mouth stays on her clit. Dirty talk against her thigh: 'This sweet cunt is mine tonight — listen how wet you are.' Read her hips: if she grinds up, keep exactly that rhythm and do NOT speed up.", forceGenital:true},
+        {word:"Deepthroat", wordCock:"Deepthroat Him", wordPussy:"Face-Sit & Eat", phraseCock:"Open wide, relax your throat and deepthroat", phrasePussy:"Have her sit on your face and eat her out, buried", detailCock:"DEEPTHROAT, STEP BY STEP: Only as deep as YOU control. Breathe out, relax your jaw and throat, tilt your head back to straighten the line, and slide him in slowly on an exhale. Hands on his hips so you set the depth — tap his thigh twice to pause. Come off to breathe, drool is hot, gagging means pull back a notch. Alternate: deep take, breathe, shallow head-sucking. He does NOT push your head unless you have agreed that separately — Skip if head-pushing shows up uninvited.", detailPussy:"FACE-SIT & EAT: Lie back, have her kneel over your face facing you (or facing your feet for deeper access), holding the headboard. She lowers her pussy onto your mouth and grinds — your job: tongue out flat, nose buried, lap at her clit every time she rocks forward, suck when she pauses. Hands on her ass cheeks to pull her down and control the grind. She sets pressure; if you need air, tap her thigh twice and she lifts. Dirty and drowning in her is the whole point — tell her after: 'Sit harder next time.'", forceGenital:true},
+        {word:"Ball Worship", wordCock:"Lick & Suck His Balls", wordPussy:"Clit Worship", phraseCock:"Take your time licking, sucking and worshipping", phrasePussy:"Worship with flat tongue, lips and worshipful dirty talk on", detailCock:"BALLS, PROPERLY: Warm them in your palm first. Lick the seam up the middle, take one ball fully into your warm mouth and hum lightly, release with a suck, repeat on the other. Tongue the soft skin behind the balls (taint) with firm flat presses. While you do it, keep his shaft stroked slowly with a spit-wet hand so he gets both at once. Whisper: 'Heavy, hot balls — I want them slapping me when you fuck me later.'", detailPussy:"CLIT WORSHIP: Isolate the clit — pull the hood back gently with one fingertip, look at it, say how pretty and swollen it is. Tiny tongue circles, then spell slow letters on it, then cover it with your whole mouth and suck in pulses: suck-suck-release, suck-suck-release. Two fingers just inside her entrance, not thrusting, just filling her while your mouth works. If her legs start shaking, freeze your tongue pressure EXACTLY as-is — consistency is what gets her off.", forceGenital:true},
+        {word:"69", phrase:"Get into 69 and eat / suck each other at the same time on", detail:"69, PROPERLY SET UP: Whoever is lighter or wants control goes on top, knees either side of the head, both mouths landing at once — dick in one mouth, pussy in the other, in whatever combo you two have (the anatomy toggles have already named your parts above). Rules: match rhythms — when one sucks harder, the other answers. Top person sets depth and grind. Take turns driving: 30 seconds one mouth leads, then swap. Hands are free for balls, ass cheeks, clit, shaft — use them. If someone is close, they tap twice and the other finishes them first.", forceGenital:true},
+        {word:"Fuck Hard", phrase:"Fuck your partner hard, deep and dirty — use the timer, talk filthy, and focus on", detail:"FUCKING INSTRUCTION (works for any combo — adapt the tool to the bodies): Cock into pussy: enter slow for the first inch, wait for the squeeze, then build to deep, hard strokes, hips slapping, one hand in her hair or on her throat's SIDE (never front), talk: 'Take every inch of this cock — good girl/boy, so fucking tight.' Cock into ass: lube, lube, more lube, one finger first, enter a centimetre at a time, stop whenever asked, then long slow strokes before any speed. No cock in the pair? Strap-on or two/three fingers count fully as fucking here — same rhythm, same dirty talk, same eye contact. Pussy-to-pussy: grind clits together in scissor or face-to-face press, hips rolling. Finish the timer fucking — do not stop to be polite.", fuck:true, forceGenital:true},
+        {word:"Ride It", phrase:"Climb on top, take control, and ride — bouncing, grinding and setting the pace on", detail:"EXPERIMENTAL POSITION — RIDE & GRIND: Receiver lies flat, giver straddles and sinks down (cock, strap-on, fingers, or grinding clit-to-whatever-you-have). Two gears: BOUNCE — up and down, thighs working, tits/chest in their face; GRIND — stay fully seated and roll hips in figure-eights, deep pressure, no lift. Alternate 10 bounces / 10 grinds. Lean back onto their thighs for a deeper angle and let them watch it slide in and out. Dirty talk from on top: 'Watch me use you — this is my cock/pussy tonight.' Their hands go on your hips only if you put them there.", fuck:true, forceGenital:true},
+        {word:"Doggy Fuck", phrase:"Put them on all fours, enter / fuck them doggy-style, pull their hips back onto you, focused on", detail:"EXPERIMENTAL POSITION — DOGGY, DONE RIGHT: Partner on all fours, back flat (not arched down), cushion under knees. Enter from behind slowly, grip both hip bones and pull them back onto every stroke so THEY do half the work. Free hand: reach under and play with cock/balls or clit in rhythm — doggy plus a hand is what makes eyes roll. Hair handful at the roots to lift their head so you can hear them. Talk over your shoulder-line: 'Ass up, take it — I love watching it disappear into you.' Change depth, not just speed: shallow teasing strokes, then three full-deep ones.", fuck:true, forceGenital:true},
+        {word:"Finger Fuck", wordCock:"Stroke & Finger", wordPussy:"Finger Fuck Her", phraseCock:"Stroke his cock with one hand while your other hand teases and fingers", phrasePussy:"Slide two fingers in and finger-fuck her properly, thumb on her clit, focused on", detailCock:"HAND + ASS PLAY: Spit or lube in your palm, stroke his shaft firm and slow, twist slightly over the head on each upstroke. Other hand: roll his balls, press his taint firmly in rhythm, and — only if he nods yes — a lubed fingertip circles his asshole, then just the tip in, pressing forward toward the prostate (walnut bump) in slow pulses while you keep stroking. That combo is the one that makes men lose their minds. Ask first, lube always, stop means stop.", detailPussy:"FINGER-FUCKING, EXACT TECHNIQUE: Two fingers (middle + ring), palm up, slide in slow. Curl up: come-here beckoning against the front wall — that spongy ridged spot is the G-spot. Rhythm: curl-curl-thrust, curl-curl-thrust. Thumb or heel of hand grinding her clit the whole time, or put your mouth there instead. Add a third finger only if she asks / pushes back for more. Listen for the wet sound and her breathing — when she clenches around your fingers, do not change a thing.", forceGenital:true},
+        {word:"Rim Job", phrase:"Spread their cheeks, get your tongue out flat and rim, lick and tease", detail:"RIMMING, CLEAN & FILTHY: Shower-fresh or a good wash first — or use a barrier (dental dam / cut-open condom) and skip the worry. Spread the cheeks wide, flat tongue circling the rim slowly, then point your tongue and flick the centre, then lap like you are eating them out — because you are. Alternate rim with the rolled genital spot (mouth back and forth drives people insane). Dirty talk muffled is fine: 'Tastiest ass — spread wider for me.' External only unless penetration was agreed separately. Skip without a word if this is not your thing tonight.", forceGenital:false},
+        {word:"Face-Fuck / Sit", wordCock:"Face-Fuck (Gentle)", wordPussy:"Face-Sit Grind", phraseCock:"Hold his head steady (only if he nods) and face-fuck his mouth with your cock / strap-on — shallow, controlled, focused on", phrasePussy:"Sit on their face, grab the headboard and grind your pussy on their mouth, focused on", detailCock:"FACE-FUCKING WITH CONTROL: This only runs on an explicit nod first — no nod, Skip. Receiver lies head at bed edge or kneeling, mouth open, tap-out signal agreed (tap thigh twice = stop instantly). Giver thrusts SHALLOW and slow — mouth and lips, throat only if receiver pulls you deeper themselves. Drool, eye contact, talk: 'Open. Wider. Take it like you love it.' Receiver can always pull off — hands stay OFF the back of their head unless they asked for that.", detailPussy:"FACE-SITTING: Sit fully — do not hover politely. Knees either side of their head, headboard gripped, lower your pussy onto their open mouth and GRIND: forward rock = clit on tongue, back rock = entrance. You control air: lift every few seconds, check 'okay?' with a squeeze code (they tap your thigh twice for air). Their hands on your ass pulling you down means MORE. Afterwards, kiss them with yourself still on their lips.", forceGenital:true},
+        {word:"Handjob / Rub", wordCock:"Sloppy Handjob", wordPussy:"Rub Her Clit", phraseCock:"Give him a slow, sloppy, spit-wet handjob, teasing the head, while you work", phrasePussy:"Rub her clit in tight circles with wet fingers, slip in and out, while you work", detailCock:"HANDJOB CRAFT: Lube or spit — dry is banned. Full grip, stroke base-to-head, twist over the crown, thumb the frenulum on the downstroke. Speed map: slow build (20 strokes), fast burst (20), then stop dead with just the head cupped — repeat. Other hand on balls/taint. Make him watch your hand on his cock and tell him exactly when he is NOT allowed to cum yet.", detailPussy:"CLIT CRAFT: Wet fingers only. Hood back, two fingertips, tight clockwise circles directly on the clit — start light, pressure builds only as she does. Switch patterns every 30 seconds: circles, side-to-side flicks, up-down rub with a finger inside her. When she says 'there — don't stop', you become a machine: same spot, same pressure, same speed until she finishes or says change.", forceGenital:true},
+        {word:"Dirty Talk & Tease", phrase:"Whisper the filthiest dirty talk you can manage, describing exactly what you will do, while you slowly tease", detail:"DIRTY TALK SCRIPT — steal these lines, say them INTO the rolled spot's owner ear while teasing it: 'I have been thinking about fucking you all day.' / 'Tell me whose [dick/pussy] this is.' / 'You are going to cum for me and I am going to watch your face do it.' / 'Beg properly and I might let you.' Name the parts by name — cock, pussy, clit, balls, cum — no cute euphemisms on Spicy. If they answer, make them say it back louder."},
+        {word:"Suck & Nibble", phrase:"Suck hard, nibble and leave your mouth all over", detail:"Full mouth commitment: suck until the skin is flushed, nibble with front teeth (no breaking skin), lick the exact spot you just bit. Leave it wet. Move an inch, repeat. This spot should look and feel thoroughly USED by the end of the timer."},
+        {word:"Grind & Fuck Tease", phrase:"Grind your hips hard against them, dry-fuck through / against, building until you are both desperate on", detail:"DRY-FUCK TEASE: Clothes on or off, press in and grind with real weight — cock grinding pussy, pussy grinding thigh, ass grinding cock. Slow hip rolls, then frantic bursts, then freeze with full pressure. The rule: no penetration and no finishing this turn — this is edging with your whole body. By the end you should both be begging for a fucking roll."}
+      ],
+      wheres: [
+        {word:"Dick", wordCock:"His Dick & Balls", wordPussy:"Her Pussy & Clit", phraseCock:"his hard dick and heavy balls", phrasePussy:"her wet pussy and swollen clit", hintCock:"DICK FOCUS: Head and frenulum get the tongue, shaft gets the hand, balls get the mouth — rotate all three so he never knows what is next. Suck the head while you stroke: that is the money combo.", hintPussy:"PUSSY FOCUS: Clit gets tongue + suction, lips get licked and sucked, entrance gets fingers. Rotate mouth-clit / fingers-inside — never leave both empty at once. Keep her spread open and LOOK at her while you eat her."},
+        {word:"Genitals, Full", wordCock:"His Cock, Balls & Taint", wordPussy:"Her Clit, Lips & Entrance", phraseCock:"his cock, balls and taint — the whole package, no part ignored", phrasePussy:"her clit, outer lips, entrance and the wet skin between — the whole pussy, no part ignored", hintCock:"FULL PACKAGE TOUR: Shaft licks, head suck, ball suck, taint press — 15 seconds each, on loop, faster each loop. Finish the timer with mouth on head + hand on shaft + fingers on taint, all at once.", hintPussy:"FULL PUSSY TOUR: Outer lips kissed, inner lips sucked one by one, clit circled and sucked, entrance fingered, perineum pressed — 15 seconds each, on loop. Finish with tongue on clit + two fingers curling inside, all at once."},
+        {word:"Asshole & Taint", phrase:"your partner's asshole and taint — spread them open and get in there", hint:"ASS FOCUS: Cheeks spread wide with both hands. Tongue circles, flicks, flat laps on the rim; firm tongue/finger presses on the taint in time with whatever the other hand/mouth is doing to their dick or pussy. Barrier if you want one, wash first either way."},
+        {word:"Nipples", phrase:"your partner's nipples — suck them, flick them, get them hard", hint:"Suck a nipple fully into your mouth, tongue flicking the tip, teeth grazing on release. Pinch the other one in rhythm. Wet nipple + cold breath = full-body shiver."},
+        {word:"Inner Thigh to Groin", phrase:"your partner's inner thigh, climbing kiss by kiss until your mouth is in their groin", hint:"Start at the knee. Every kiss an inch higher, legs pushed wider each time. Last kiss lands NEXT to their dick/pussy — breathe there, do not touch it yet, make them beg for the last inch."},
+        {word:"Neck & Ear", phrase:"your partner's neck and ear — bite it, suck it, talk filth into it", hint:"Bite the side of the neck (never front), suck a mark just under the jaw, then whisper exactly what you want to do to their cock/pussy later. The ear hears it, the neck feels it."},
+        {word:"Bare Ass Cheeks", phrase:"your partner's bare ass — spank it pink, spread it, bite the cheeks", hint:"Open-palm spanks to warm both cheeks pink, bite the under-curve, spread them and kiss the crack top to bottom. Ass play pairs with everything: spank while you stroke / finger them if you can reach."},
+        {word:"Hip Crease & Groin Line", phrase:"the crease where your partner's thigh meets their groin, millimetres from their dick / pussy", hint:"Tongue the full crease line slowly. You are SO close their genitals twitch — that is the torture. Graze them 'accidentally' every third pass."},
+        {word:"Mouth — Kiss Filthy", phrase:"your partner's mouth — kiss them like you fuck: tongue deep, biting lips, spit and all", hint:"Deep tongue kisses, suck their lower lip, bite it gently, kiss them immediately after oral so they taste themselves on you. Filthy kissing is a Spicy staple — no polite pecks."},
+        {word:"Chest & Stomach Trail", phrase:"your partner's chest and stomach, mouth trailing down toward their waistband — and past it", hint:"Do not stop at the waistband this time. Trail down, open it, keep going in the same unbroken line of tongue until you arrive. The arrival is the point of Spicy."},
+        {word:"Anywhere — Your Filthiest Idea", phrase:"wherever your filthiest idea points you on your partner — say it out loud first, then do it", hint:"Name it before you do it: 'I am going to ___ your ___ until you ___.' Then deliver exactly that. Announcing it is half the turn-on."},
+        {word:"Thighs — Spread Them", phrase:"your partner's thighs — push them wide open and keep them spread while you work", hint:"Hands on inner knees, legs held WIDE. They do not get to close them this turn. Everything between is on display and they know you are looking."}
+      ]
+    },
+    wild: {
+      actions: [
+        {word:"Blindfold Kiss", phrase:"Blindfold your partner, then kiss", detail:"Tie the blindfold (scarf or sleep mask), turn them slowly once so they lose orientation, wait a beat in silence — then kiss without warning. They don't get to know where the next kiss lands."},
+        {word:"Ice & Warmth", phrase:"Alternate an ice cube and your warm mouth on", detail:"Three passes with the ice cube (keep it moving, never parked), then immediately cover the same cold skin with your warm mouth. Two full cycles minimum."},
+        {word:"Pin & Kiss", phrase:"Pin your partner down playfully and kiss", detail:"Wrists held above their head with one of your hands, your weight keeping them deliciously stuck — escapable if they truly push, firm enough that they don't want to."},
+        {word:"Strip Tease", phrase:"Slowly undress your partner just enough to bare and tease", detail:"One item or one fastening at a time, narrating nothing, kissing every new patch of skin as it's revealed before you move on."},
+        {word:"Body Trace", phrase:"Trace a slow, wandering path with your tongue down to", detail:"One unbroken line of tongue from wherever you start — collarbone, stomach, hip — travelling for at least 20 seconds before you arrive. No shortcuts."},
+        {word:"Take Control", phrase:"Take the lead, position your partner how you want them, and explore", detail:"Move them — turn them, bend them, spread them — calmly and confidently, then work the spot for the full turn while they stay exactly as placed."},
+        {word:"Use Your Mouth", phrase:"Use only your mouth — no hands allowed — on", detail:"Hands behind your back or gripping the headboard. Lips, tongue, teeth and breath only, for the entire turn. If your hands sneak in, the turn restarts."},
+        {word:"Sloppy Oral Edge", phrase:"Go down and give sloppy, noisy, spit-everywhere oral — suck, gag, lick, worship — then edge them cruelly on", detail:"SLOPPY ORAL: More spit, more noise, more mess — drool down the shaft / dripping chin on a pussy is HOT here. Suck dick deep then spit on it and stroke; eat pussy loud enough to hear, suck her clit and let her grind your face. Build to the edge twice and pull off with a grin each time. They should be begging, shaking and leaking by the end."},
+        {word:"Spank & Soothe", phrase:"Spank playfully, then soothe with your mouth, on", detail:"Three open-palm spanks, firm enough to sting and leave warmth — then immediately kiss and lick the exact spot. Alternate: three spanks, mouth, three spanks, mouth."},
+        {word:"Worship", phrase:"Worship with your mouth, slowly and thoroughly,", detail:"Unhurried, reverent, total focus — kiss, lick and suck every centimetre of the area like it's the main event, because for this turn it is."},
+        {word:"Edge & Pause", phrase:"Build your partner up, then stop dead, while working", detail:"Go at full intensity until their breathing changes — then freeze, hands and mouth off, for a count of five, eye contact the whole time. Then start again from zero."},
+        {word:"Mark It", phrase:"Suck and bite a visible mark onto", detail:"Suck hard enough to leave a mark they'll find tomorrow (check first that a visible mark is okay — skip or go somewhere hidden if not), lips sealed, 15 slow seconds."}
+      ],
+      wheres: [
+        {word:"Neck & Throat", phrase:"your partner's neck and throat", hint:"Alternate soft and firm down the side of the neck to the hollow of the throat. Check in with eye contact — the throat is vulnerable and that's the point."},
+        {word:"Inner Thigh", phrase:"your partner's inner thigh", hint:"Start at the knee and climb a kiss at a time, spreading their legs wider as you go. End close enough that they can feel your breath on everything."},
+        {word:"Hip Bone", phrase:"your partner's hip bone", hint:"Tongue in the groove of the bone, teeth grazing it lightly. One of the most underrated spots on the body — prove it."},
+        {word:"Chest", phrase:"your partner's chest", hint:"Flat palm first, dragging slowly down, then let your mouth take over — sternum to ribs to the soft part at the side."},
+        {word:"Lower Back", phrase:"your partner's lower back", hint:"Pull them in close by the hips while you do it, thumbs digging into the dimples either side of the spine."},
+        {word:"Anywhere You Want", phrase:"anywhere you want on your partner", hint:"Your pick, no hedging. Choose the spot you've been thinking about all day and say out loud why you chose it before you start."},
+        {word:"Nipples", phrase:"your partner's nipples", hint:"Lick around the areola, suck the nipple in and roll it with your tongue, then a light pinch-and-kiss if they arch into it. Cold breath across a wet nipple to finish."},
+        {word:"Bare Ass", phrase:"your partner's bare ass", hint:"Spread the cheeks with both hands and kiss, lick and nibble each one — the full curve, the under-curve, and slow circles closing in toward the centre."},
+        {word:"Dick / Pussy — Full Oral", wordCock:"His Dick — Suck It", wordPussy:"Her Pussy — Eat It", phraseCock:"his dick — get it in your mouth, down your throat, sloppy and deep", phrasePussy:"her pussy — get your face buried in it, tongue inside her, clit in your mouth", hintCock:"WILD DICK ORAL: Deep takes, spit, hand twisting the shaft, balls in your other hand, eye contact up at him while you gag on it (only as deep as YOU choose). Swallow the head and hum.", hintPussy:"WILD PUSSY ORAL: Tongue INSIDE her, not just on the clit — fuck her with your tongue, then suck her clit while two fingers curl her G-spot. Face fully buried, her thighs around your head."},
+        {word:"Perineum", phrase:"your partner's perineum — the sensitive strip between their genitals and their ass", hint:"Flat tongue, firm slow presses and circles on that hidden strip. It's densely wired — most people have never been touched there deliberately. Stay external, stay slow."},
+        {word:"Stomach to Hip", phrase:"your partner's stomach, trailing down to the hip", hint:"One continuous descent: around the navel, down the centre line, across to the hip — tongue the whole way, no lifting your head."},
+        {word:"Behind the Knee", phrase:"the soft skin behind your partner's knee", hint:"Bend their leg, hold the calf, and work the crease with lips and tongue. Absurdly sensitive, almost never touched — expect squirming."}
+      ]
+    },
+    bdsm: {
+      actions: [
+        {word:"Counted Spanks — Harder", phrase:"Bend them over, deliver 15 counted spanks — hard, rhythmic, they count and thank you for each —", detail:"ESCALATED SPANKING: Warm-up 5 medium, then 10 at full working intensity, alternating cheeks, flat palm landing on the fleshy centre only. They count out loud: 'Seven — thank you.' Lose count = that cheek's set restarts. Between sets, rub the hot skin, then one surprise hardest spank to finish. Skin should glow red and hot — bruising means you overshot; ice and aftercare if marks bloom. Check 'green, yellow, red?' before any repeat set."},
+        {word:"Cock Torture", wordCock:"CBT — Cock & Ball Torture", wordPussy:"Pussy Torture", phraseCock:"Tie, squeeze, slap and torment his cock and balls — controlled CBT, his hands restrained, focused on", phrasePussy:"Slap, squeeze, spread and torment her pussy — clit flicks, lip pulls, pussy spanks, focused on", detailCock:"CBT, SAFE & FILTHY: Restrain his hands first. Start with ball squeezes — firm handful, hold 5 seconds, release (blood flow returns — never keep balls tied tight / blue; a loose shoelace tie is display only, off every 10 min). Cock slaps against his thigh: 10, building. Ball slaps: open fingers only, half force max. Fingernail drag down the shaft, squeeze under the head until he begs. Talk: 'These balls are mine. This cock only gets hard when I allow it.' ANY numbness, cold or colour change = everything off immediately. Skip if unsure — CBT done unsure is CBT done wrong.", detailPussy:"PUSSY TORTURE, SAFE & FILTHY: Spread her wide, legs held/restrained open. Pussy spanks: two-finger then full flat-hand slaps directly on her pussy — start 5/10 force, the wet slap sound is the point — 10 counted, she thanks you. Clit work: flicks, firm circles, hood pulled back, direct pressure pulses; squeeze outer lips together and roll them. Insert two fingers and HOLD still while you spank her clit lightly — fullness plus sting. Talk: 'Spread this cunt wider. You take it because I own this pussy tonight.' Watch her face, not just her body — yellow means halve everything instantly.", forceGenital:true},
+        {word:"Throat Training", wordCock:"Face-Fuck Training", wordPussy:"Face-Sit Domination", phraseCock:"Train his mouth on your cock / strap-on — face-fuck under YOUR control, tap-out agreed, focused on", phrasePussy:"Use her face — sit on it, grind, make her eat under YOUR command until you say stop, focused on", detailCock:"FACE-FUCK DOMINATION (explicit nod + tap signal REQUIRED first — no nod, Skip): He kneels or lies head-off-bed. You thrust — start lips/shallow, depth only increases if HE pulls you in or gives the agreed 'more' signal. Drool everywhere is success. Commands: 'Open. Tongue out. Take it deeper — good slut, look at me while you choke on it.' Tap twice = instant full stop, no finishing the stroke. Never hold his head down against resistance. This is the kinkiest oral on the board — treat the tap-out as sacred.", detailPussy:"FACE-SIT DOMINATION: Full weight, headboard gripped, her arms restrained or held above her head. Grind your pussy/clit on her mouth in slow circles, lift for air on YOUR schedule — check every few seconds, tap = air instantly. Commands: 'Lick. Harder. You eat this pussy until I cum on your face — understand?' Fingers in her hair to hold her face in place (roots grip, steady, no yanking). When close, press down and ride her tongue through it, then make her kiss you with your taste on her lips.", forceGenital:true},
+        {word:"Edge & Ruin Denial", wordCock:"Edge Him & Deny Cum", wordPussy:"Edge Her & Deny Orgasm", phraseCock:"Edge his cock to the brink 3 times — mouth and hand — then deny him: no cum, hands off, focused on", phrasePussy:"Edge her clit to the brink 3 times — mouth and fingers — then deny her: stop dead, legs held open, focused on", detailCock:"DENIAL PROTOCOL: Suck + stroke him to the edge — you will feel the balls draw up and the shaft pulse — STOP. Everything off. He stays hard, leaking, hands where you put them, count of 20. Repeat to edge #2, stop harder (light cock slap for punctuation). Edge #3: take him in your mouth, suck the head slowly... and stop with his cum still in him. Verdict, said calmly: 'You don't cum tonight until I say. Beg prettier next roll.' Ruined orgasm variant (only if pre-agreed): stroke him THROUGH cum with no pause until he is begging you to stop — oversensitivity is the torture.", detailPussy:"DENIAL PROTOCOL: Eat her / finger her to the edge — clit swollen, hips bucking, breath breaking — STOP DEAD. Mouth off, fingers out, hold her legs open so she feels the air and the ache. Count of 20 while she whimpers. Edge #2 the same, stop later. Edge #3: suck her clit in pulses until she is ONE second away... release, sit back, admire her shaking. Verdict: 'You cum when I decide, not when you beg. Ask properly.' If a later roll grants permission, she must ask out loud, in full dirty words, before she is allowed.", forceGenital:true},
+        {word:"Anal Training", phrase:"Train their ass — lubed fingers, rimming, slow stretch, dirty talk the whole time, focused on", detail:"ANAL TRAINING (lube is not optional, it is the law): Start external — rim with tongue/barrier, circle with a lubed fingertip while your other hand works their dick/pussy. One finger, in on THEIR exhale, still for 10 seconds, then slow small strokes. Dick-owner: press UP toward the belly to find the prostate and pulse it while stroking his cock — the 'milking' combo. Pussy-owner: one finger in ass + two in pussy = the fullest feeling on the board. Two fingers ONLY if they ask for more out loud. Nails short, lube reapplied constantly, pain (not pressure/stretch) = stop, out, reassess. Never same finger ass-to-pussy without washing/changing glove/condom.", forceGenital:true},
+        {word:"Degrading Dirty Talk Fuck", phrase:"Fuck them while you talk them down filthy — name what they are for you tonight, hard and deep, focused on", detail:"DEGRADATION FUCKING (only words you have BOTH pre-approved — if pet names/slur-play were never agreed, Skip or keep it to 'my dirty slut / my good toy' level): Fuck in any position from Spicy — doggy and prone-bone hit hardest — while narrating ownership: 'Whose cock/pussy is this? Say it. Louder.' / 'You look best like this — fucked open and desperate.' Pull hair, grip hips, spit on the rolled spot and rub it in. AFTERCARE IS PART OF THIS ROLL: the second the timer ends, talk flips warm — name one true, kind thing, hold them. Degradation without aftercare is just being cruel.", fuck:true, forceGenital:true},
+        {word:"Blindfold, Bound & Used", phrase:"Blindfold them, restrain wrists AND ankles spread, then use your mouth, hands and toys on", detail:"FULL SENSORY CONTROL: Blindfold + wrist restraints + ankles spread to bedposts/furniture (two-finger slack everywhere, circulation checks every few minutes, scissors within reach for fabric ties). Then UNPREDICTABILITY: rotate every 20-30 seconds — ice, flogger falls on thighs/ass, mouth on genitals, nipple pinch, whisper in ear, NOTHING for 10 full seconds (silence is a sensation). They guess nothing, control nothing, safeword controls everything. This is the signature BDSM scene — if any restraint feels wrong at any second, it comes off mid-scene, no discussion until after."},
+        {word:"Wax, Ice & Bite", phrase:"Drip body-safe candle wax, chase it with ice, peel, bite and lick clean on", detail:"TEMPERATURE TORTURE: Use ONLY low-temp body/soy candles (never household paraffin tapers — burns). Test a drip on your own inner wrist first. Drip from 30cm height onto chest, stomach, thighs, ass — avoid face, genitals' most delicate skin gets drips on surrounding skin first, direct only if they beg. Ice cube dragged over hot wax skin = the scream-maker. Peel wax off with fingernails, bite the warm skin under it, lick it clean. Blindfold them for max effect."},
+        {word:"Flogger & Crop Set", phrase:"Work them over with flogger then crop — counted sets, building, red skin, on", detail:"IMPACT SETS, ADVANCED: Flogger warm-up: 20 soft falls, rhythm steady, fleshy zones only (ass, thighs, upper back flats — NEVER spine, kidneys, joints, neck, face). Crop: sharper — 10 counted taps on ass/taints of thighs, they count and thank you. Build pattern: flogger 20 / crop 10 / palm-soothe / inspect skin. Red and hot = perfect. Broken skin, white welts that stay, or bruising beyond light marks = session over for that spot. End by fucking or eating the hot skin if the next roll allows — impact-warmed skin feels everything double."},
+        {word:"Cum Control & Worship", wordCock:"Cum On Command", wordPussy:"Squirt / Cum On Command", phraseCock:"Work his cock until he is desperate — he cums ONLY when you give the word, and where you point, focused on", phrasePussy:"Work her pussy until she is desperate — she cums ONLY when you give the word, face or fingers as you direct, focused on", detailCock:"CUM COMMAND: Stroke/suck him to 90% and hold him there with head-only sucks. Order: 'Ask permission.' He must ask in full words ('Please, may I cum?') — grant or deny as you like, once per turn. When granted: direct the shot — 'Cum on my tits / in my mouth / on your own stomach and watch.' If he cums early without permission: everything stops, hands off, disappointment voice: 'We will try again when you learn control.' (All theatre — check in warm after the scene.)", detailPussy:"CUM COMMAND: Fingers + clit (or mouth) to 90%, then HOLD — fingers still inside her, thumb resting on her clit, no movement, while she begs. Order: 'Ask permission properly — full dirty words.' Grant or deny once per turn. Fast G-spot curls + firm clit pressure is the squirt setup for many women — towels down, pressure like she needs to pee is normal, let go and ride it if it happens. Cumming early = stop, legs held open, calm disappointment voice, scene resets. Warm check-in after, always.", forceGenital:true},
+        {word:"Toy Torture", phrase:"Use a vibrator / toy on them at punishing settings while restrained — forced, relentless, on", detail:"FORCED TOY PLAY: Wrist restraint + vibrator wand/ toy. Cock-owner: vibe the frenulum under the head, or a vibrating ring/sleeve held while he may NOT touch himself. Pussy-owner: wand directly on clit through/around underwear first, then bare — high setting, held in place by your hand when she bucks ('Hold still — take it'). Forced multiple orgasms variant (pre-agree!): after she/he cums, toy STAYS for a count of 10 — oversensitive squirming is the scene — then release. Batteries, cleanliness (wash/condom over shared toys), and the safeword outranks the toy every time."},
+        {word:"Spit, Slap & Claim", phrase:"Spit on it, slap it, claim it out loud — primal, possessive, filthy work on", detail:"PRIMAL CLAIMING: Spit directly on the rolled spot (genitals get spit as lube — generous, dripping), slap it (ass full palm / pussy two-finger-to-palm building / cock against thigh), grip it and SAY the claim: 'Mine. This [cock/pussy/ass] belongs to me tonight — say it back.' Face slaps are OFF this board entirely (separate explicit negotiation only — Skip substitute: cheek GRIP and head-turn). Primal energy, controlled hands: every hard action lands only where this game has already sent you."},
+        {word:"Public-Use Fantasy Talk", phrase:"Describe, in graphic detail, a filthy use-fantasy while you work them — being watched, shared in fantasy only, displayed — focused on", detail:"FANTASY DEGRADATION TALK (fantasy ONLY — nobody is actually being shared/watched): While hands/mouth work the rolled spot, narrate a vivid scene in second person: a club, an audience, them displayed spread and used while strangers watch them cum. Detail sells it: what the watchers say, how wet/hard they get being seen. Gauge reaction constantly — some people melt, some hate it; a flinch or 'yellow' ends the story mid-sentence and you switch to praise. The fantasy stays in the room."},
+        {word:"Countdown to Cum / Pain", phrase:"Count down from 10 — each number harder: spank, suck, stroke or squeeze — at ONE they get the full force / release, on", detail:"THE COUNTDOWN, ESCALATED: Pick the currency by spot: spanks on ass, sucks on dick/clit, strokes, squeezes. 'Ten...' light. Each number +20% intensity, they stay silent and still (squirming allowed, words are not). Reach ONE = maximum agreed intensity OR permission to cum, whichever you announced at the start. Break silence early = restart at ten, and the restart is a known, delicious threat. Announce the prize at ONE before you start counting."}
+      ],
+      wheres: [
+        {word:"Dick — CBT Target", wordCock:"His Cock & Balls — CBT", wordPussy:"Her Pussy — Torture Target", phraseCock:"his cock and balls — restrained, exposed, yours to torment", phrasePussy:"her pussy and clit — spread, exposed, yours to torment", hintCock:"CBT TARGET RULES: Balls = squeeze/slap/tie-display only, never crush, never leave tied tight or discoloured. Cock = slaps land on thigh/stomach, head gets squeeze-flick-suck rotation. He watches everything — no blindfold for CBT, eye contact is part of the submission.", hintPussy:"PUSSY TARGET RULES: Slaps land flat and centred, force builds by HER reactions. Clit gets flicks, sucks, pinches between your fingers — direct work only once she is soaked. Spread her lips WIDE for display between every set and tell her how she looks."},
+        {word:"Genitals — Denied", wordCock:"His Dick — Hard, Leaking, Denied", wordPussy:"Her Pussy — Swollen, Dripping, Denied", phraseCock:"his hard, leaking dick — edged raw and denied under your command", phrasePussy:"her swollen, dripping pussy — edged raw and denied under your command", hintCock:"DENIED DICK: Keep him at 90% — head sucks, slow strokes, ball play — and describe his cum staying IN him. Leaking precum gets licked off as 'the only taste you get'. Hands restrained or on his own head, never on his cock.", hintPussy:"DENIED PUSSY: Keep her at 90% — clit circles that keep MISSING by a millimetre are the cruellest legal move. Fingers inside, perfectly still, while she clenches around nothing happening. Describe her orgasm as yours, stored, unspent."},
+        {word:"Ass — Train It", phrase:"their ass — rim, fingers, stretch, training under command", hint:"ASS RULES, BDSM EDITION: Lube waterfall, not droplet. Rim first (barrier welcome), finger(s) only on exhale, prostate/front-wall pressure is the reward button. Ass + genital combo (other hand/mouth) is mandatory — pure anal focus is for later rolls. Pain = stop, always."},
+        {word:"Bare Ass — Beat It Pink", phrase:"on their bare ass — bent over, cheeks spread for inspection between sets", hint:"IMPACT CANVAS: Fleshy centre of each cheek, under-curve for the crop. Spread-and-inspect between sets: look at the colour, touch the heat, narrate it ('Look how red I have made this ass'). Never tailbone, spine, kidney height."},
+        {word:"Nipples — Clamp & Pull", phrase:"on their nipples — pinch, pull, clamp if you have them, suck the ache out after", hint:"Clips/clamps: max 15-20 min, pain SPIKES when they come OFF — warn, count down, then suck/kiss immediately. No clamps? Fingertip pinch-pull + teeth grazing matches it. Nipples that go white/pale = release now."},
+        {word:"Inner Thighs — Bite & Mark", phrase:"on their inner thighs — bitten, sucked purple, spread and held open", hint:"Thighs bruise beautifully and easily — bites and hard sucks here leave tomorrow's evidence (check marks are welcome). Work UP toward the genitals and stop an inch short between every pass. Legs must stay open — a hand on each knee enforces it."},
+        {word:"Back & Shoulders — Flog", phrase:"across their back and shoulders — face-down, flogger territory", hint:"Muscular flats beside the spine ONLY. Long flogger falls shoulder-to-shoulder, crop taps as punctuation. From behind + blindfold = they hear the flogger whoosh before it lands. That sound becomes the flinch trigger — use it."},
+        {word:"Mouth — Gag on It", wordCock:"Their Mouth — On His Cock", wordPussy:"Their Mouth — On Her Terms", phraseCock:"their mouth — stuffed with cock / strap-on / fingers, drooling, gagging, trained", phrasePussy:"their mouth — stuffed and used, drooling, trained to serve", hintCock:"MOUTH RULES: Tap-out signal is LAW (head control + gagging removes speech). Shallow-to-medium depth, THEY pull deeper if they want more. Fingers variant: two fingers pressed on the tongue, 'suck them like a cock/pussy' command. Drool = praise it, never shame it — shame-play only if pre-agreed in Degradation rolls.", hintPussy:"MOUTH RULES: Tap-out signal is LAW. Fingers pressed on tongue, sucking commands, spit play if pre-agreed. Drool = praise. Any gagging distress (not theatre) = out, water, check-in."},
+        {word:"Throat & Neck — Grip (Side)", phrase:"the SIDE of their neck and jaw — grip, hold, turn their head (never front of throat, never breath)", hint:"GRIP, DON'T CHOKE: Hand cups the side of the neck/jaw to HOLD and STEER the head — thumb behind the ear, zero pressure on the front airway, breathing 100% free at all times. This is dominance display, never breath play. Breath play is not in this game, full stop."},
+        {word:"Bound & Spread — Full Display", phrase:"their whole bound, spread body — displayed, inspected, every part yours this turn", hint:"FULL DISPLAY: Restraints spread them, you walk the perimeter: look, touch, narrate what you see ('Hard/wet already and I have barely touched you'). Inspection first, action second — the being-looked-at IS the kink. Circulation checks ride along with the inspection."},
+        {word:"Anywhere They Beg — Make Them Name It", phrase:"whichever filthy spot they beg for — in full dirty words, naming the part and the act", hint:"BEGGING RULES, HARDENED: 'Please' alone fails. Required format: 'Please [act] my [dick/pussy/ass/clit], I need it, it's yours.' Two failed attempts = you choose the spot instead and they thank you anyway."},
+        {word:"Feet-Up / Legs Pinned", phrase:"their legs pinned back / feet up by their head — folded, exposed, deepest access", hint:"FOLDED & EXPOSED: Legs pinned back opens EVERYTHING — genitals, ass, taint all in one frame. Pillow under hips. Deep fucking, rimming, toy play all upgrade here. Check hip/knee comfort — folded is a stretch; cramp = unfold immediately."}
+      ]
+    }
+  };
+
+  var POSITIONS = [
+    {title:"Spooning", text:"Curl up behind your partner, bodies fitted together front-to-back, your free hand reaching around to play the roll out. Close, warm, unhurried — your mouth lands on necks, ears and shoulder blades without either of you moving."},
+    {title:"Face to Face", text:"Lie facing each other, foreheads nearly touching, legs tangled between each other's. Eye contact does half the work — every action happens inches from their face, so they watch you do it."},
+    {title:"Lap Embrace", text:"One of you sits back against the headboard; the other straddles their lap facing them, knees either side of their hips. Now perform the roll at point-blank range — chest to chest, nowhere to hide."},
+    {title:"Standing, Against the Wall", text:"Back your partner against a wall, one forearm beside their head, your body pinning their hips in place. Height difference in tension: considerable. Perfect for neck, chest and hip rolls."},
+    {title:"Side by Side", text:"Lie side by side, top legs thrown over each other's hips, hands free to wander. Let the roll happen lazily and thoroughly — this is the slow-burn position."},
+    {title:"Seated, Back to Chest", text:"Your partner sits between your legs, back against your chest, head tipped back onto your shoulder. You reach around them — chest, stomach, between the legs are all yours — while they can't see your hands coming."},
+    {title:"Straddle & Control", text:"Your partner lies flat; you straddle their hips (or their chest, facing their feet for ass and thigh rolls) and work from above. You set the angle, the pressure and the pace — they just take it."},
+    {title:"Edge of the Bed", text:"Your partner sits or lies at the very edge of the bed, legs spread or dangling; you kneel or stand between their knees. Ideal for Between the Legs, inner thigh and hip crease rolls — everything is presented and reachable."},
+    {title:"Over the Sofa Arm", text:"Your partner bends over the padded arm of a sofa or the foot of the bed, ass up, supported by cushions, holding on. Built for spanking, flogging and bare-ass rolls — steady stance for you, full exposure for them."},
+    {title:"Face-Down, Hands Held", text:"Your partner lies face-down, arms stretched above their head, and you hold both their wrists in one hand at the headboard while you work their back, ass and thighs with the other. Prone, pinned, and patient."},
+    {title:"Kneeling, Face to Face", text:"Both of you kneel facing each other on the bed, bodies pressed together, arms around each other. Rolls land on necks, chests and nipples while your hips grind — commands and countdowns work beautifully whispered here."},
+    {title:"Partner on Top", text:"Your partner climbs on top and takes the lead for this bonus — they choose the pressure, the rhythm and how much of the roll to give you, sitting, grinding or leaning in. Your only job: keep your hands where they put them."}
+  ];
+
+
+  var SPICY_POSITIONS = [
+    {title:"Reverse Cowgirl", text:"EXPERIMENTAL FUCKING POSITION: They lie flat, you straddle FACING THEIR FEET and sink down (cock / strap-on / grinding). Lean forward onto their thighs and bounce — they get the full view of your ass and of it sliding in and out, and their hands are free for your ass cheeks and their own... no — hands stay on YOUR ass, pulling you down each bounce. Deep, visual, and the angle hits spots missionary never finds."},
+    {title:"The Butterfly (Edge of Bed)", text:"EXPERIMENTAL FUCKING POSITION: Receiver lies on their back at the very edge of the bed, hips at the rim, legs up on the giver's shoulders. Giver stands and fucks with full hip power and a perfect view — eye contact, genitals, everything on display. Pillow under the receiver's hips tilts the angle deeper. Giver's thumb works the clit / strokes in rhythm. One of the deepest positions there is — start slow."},
+    {title:"Lotus", text:"EXPERIMENTAL FUCKING POSITION: Giver sits cross-legged / legs out, receiver sits in their lap facing them, legs wrapped around their back, arms around necks. Rock together — this is grinding-fucking, not thrusting: deep, fully inside, chest to chest, kissing between strokes. Slow, intimate, and quietly one of the most intense positions on this list."},
+    {title:"Prone Bone", text:"EXPERIMENTAL FUCKING POSITION: Receiver lies FLAT face-down, legs together, pillow under hips. Giver enters from above/behind — legs-together makes everything dramatically tighter. Giver's hands pin the receiver's hands above their head or grip their hips. Claustrophobic, primal, deep — a BDSM favourite hiding in the Spicy list."},
+    {title:"Standing Carry / Wall Press", text:"EXPERIMENTAL FUCKING POSITION: Against a wall: receiver's back to the wall, legs wrapped around the giver's waist, giver holds under their ass and fucks upward in short powerful strokes (skip the full carry unless you are both sure of strength — wall support does the work). Gravity deepens everything. Keep it to short bursts and move to the bed before legs give out."},
+    {title:"Scissors", text:"EXPERIMENTAL FUCKING POSITION: Lie side by side, legs scissored together so genitals press directly — clit-to-clit, or cock grinding pussy while one leg traps it in. Rock in small grinding circles, hands roaming free. Low effort, constant contact, builds forever — the lazy experimentalists' masterpiece."},
+    {title:"Chair Straddle", text:"EXPERIMENTAL FUCKING POSITION: Giver sits on a sturdy chair (no wheels!), receiver straddles facing them, feet on the floor for leverage, and rides — bouncing with leg power, hands on the giver's shoulders or the chair back. Giver's mouth is at perfect nipple height; hands control the receiver's hips. Public-fantasy energy, bedroom-safe."},
+    {title:"Wheelbarrow (Supported, Advanced)", text:"EXPERIMENTAL FUCKING POSITION — ADVANCED, GO CAREFUL: Receiver on all fours at the bed edge, giver stands behind and lifts their legs by the thighs so their weight rests on their arms / the bed edge, entering from behind. Support does the heavy lifting — keep it SHORT (a minute or two), receiver's arms must be solid, stop instantly for any wobble. Not a strength contest: if it is not stable, swap to Butterfly and nobody's ego gets a vote."}
+  ];
+
+  var BDSM_SCENES = [
+    {title:"The Inspection", text:"FULL KINK SCENE: They stand (or kneel) naked, hands behind head, while you walk slow circles, inspecting every inch — turning their head, spreading, checking their dick/pussy/ass like property being appraised. Narrate findings out loud, clinical and filthy at once. Nothing sexual happens until the inspection is COMPLETE — the waiting under your eyes is the scene. Then one reward touch, their choice of where, earned by stillness."},
+    {title:"Bound, Edged & Displayed", text:"FULL KINK SCENE: Wrist + ankle spread restraints, blindfold on. Edge them (hand/mouth/toy) to the brink THREE times over the scene, announcing each denial. Between edges: impact sets on ass/thighs, ice drags, whispered descriptions of how they look tied and desperate. Scene ends only with your verdict: permission... or denial and a kiss on the forehead. Aftercare: untie in reverse order, water, warm blanket, honest check-in."},
+    {title:"The Training Session", text:"FULL KINK SCENE: Pick ONE skill — throat, ass, cum-control, or stillness — and train it like a coach from hell: drills, counts, corrections, restarts for sloppy form. Praise is rationed and therefore electric when it lands ('Better. Again.'). End with a test: perform the skill perfectly once, earn the reward you announced at the start. Training frames make everything hotter because the standards are REAL within the scene."},
+    {title:"Wax & Impact Tableau", text:"FULL KINK SCENE: Face-down, wrists loosely bound above the head. Alternating stations down the body: flogger falls on the back, wax drips on ass and thighs, crop taps, ice peel-and-lick, bites on the hot skin. Narrate nothing — let sensation be the only language. Finish with your palm flat on their hot back and one sentence: 'You took all of that beautifully.' Then aftercare like it is part of the liturgy, because it is."}
+  ];
+
+  var heat = "spicy";
+  var anatomy = {1:"cock", 2:"pussy"};
+  var lastRoll = null;
+  var turn = 1;
+  var rolling = false;
+  var hasRolled = false;
+  var history = [];
+
+  var dieAction = document.getElementById('dieAction');
+  var dieWhere = document.getElementById('dieWhere');
+  var wordA = document.getElementById('dieActionWord');
+  var wordW = document.getElementById('dieWhereWord');
+  var sentence = document.getElementById('resultSentence');
+  var bdsmNote = document.getElementById('bdsmNote');
+  var bonusCard = document.getElementById('bonusCard');
+  var bonusTitle = document.getElementById('bonusTitle');
+  var bonusText = document.getElementById('bonusText');
+  var rollBtn = document.getElementById('rollBtn');
+  var turnText = document.getElementById('turnText');
+  var turnAvatar = document.getElementById('turnAvatar');
+  var historyList = document.getElementById('historyList');
+  var historyEmpty = document.getElementById('historyEmpty');
+  var bonusTag = document.getElementById('bonusTag');
+  var detailCard = document.getElementById('detailCard');
+  var detailDoLabel = document.getElementById('detailDoLabel');
+  var detailDoText = document.getElementById('detailDoText');
+  var detailWhereLabel = document.getElementById('detailWhereLabel');
+  var detailWhereText = document.getElementById('detailWhereText');
+  var listenWrap = document.getElementById('listenWrap');
+  var listenBtn = document.getElementById('listenBtn');
+  var stopSpeakBtn = document.getElementById('stopSpeakBtn');
+  var listenNote = document.getElementById('listenNote');
+
+  function partnerName(n){ return n === 1 ? "Partner One" : "Partner Two"; }
+  function R(obj, field, recip){ var k = (recip === "cock") ? "Cock" : "Pussy"; return (obj[field + k] !== undefined) ? obj[field + k] : obj[field]; }
+  function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  function fillDetailText(el, text){
+    el.innerHTML = '';
+    var m = text.match(/^([A-Z0-9][A-Z0-9 ,&\/'’—\-]{2,58}):\s+/);
+    if(m){
+      var strong = document.createElement('strong');
+      strong.textContent = m[1] + ': ';
+      el.appendChild(strong);
+      el.appendChild(document.createTextNode(text.slice(m[0].length)));
+    } else {
+      el.textContent = text;
+    }
+  }
+  function stripFocusPrefix(text){
+    return text.replace(/^[A-Z &\/]{0,30}FOCUS:\s*/, '');
+  }
+  function idxPick(n){ return Math.floor(Math.random()*n); }
+
+  function setTurnLabel(){
+    turnText.textContent = "P" + turn + "'s turn";
+    turnAvatar.textContent = turn;
+  }
+
+  function applyHeatTheme(){
+    document.documentElement.classList.toggle('bdsm-mode', heat === 'bdsm');
+    bdsmNote.classList.toggle('show', heat === 'bdsm');
+  }
+  document.querySelectorAll('[data-heat]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('[data-heat]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      heat = btn.getAttribute('data-heat');
+      stopSpeaking();
+      applyHeatTheme();
+    });
+  });
+
+
+  document.querySelectorAll('[data-anatomy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = btn.getAttribute('data-anatomy').split(':');
+      var who = parseInt(parts[0], 10); anatomy[who] = parts[1];
+      document.querySelectorAll('[data-anatomy]').forEach(function(b){
+        var bp = b.getAttribute('data-anatomy').split(':');
+        if(parseInt(bp[0],10) === who) b.setAttribute('aria-pressed', bp[1] === anatomy[who] ? 'true' : 'false');
+      });
+      var note = document.getElementById('note' + who);
+      if(note) note.textContent = (anatomy[who] === 'cock') ? "Has a dick — receives dick-specific rolls" : "Has a pussy — receives pussy-specific rolls";
+    });
+  });
+
+  function addHistory(actor, actionWord, whereWord, isMatch){
+    history.unshift({actor:actor, text: actionWord + " · " + whereWord + (isMatch ? " — match!" : "")});
+    if(history.length > 8) history.pop();
+    historyEmpty.style.display = 'none';
+    historyList.innerHTML = '';
+    history.forEach(function(h){
+      var li = document.createElement('li');
+      var who = document.createElement('span'); who.className='who'; who.textContent = h.actor === 1 ? 'P1' : 'P2';
+      var txt = document.createElement('span'); txt.textContent = h.text;
+      li.appendChild(who); li.appendChild(txt);
+      historyList.appendChild(li);
+    });
+  }
+
+
+  /* ===== Read-aloud: voice PERSONALITIES from device voices (not a custom/cloned AI voice) ===== */
+  var VOICE_PRESETS = {
+    sweet: { desc:"Sweet: bright, friendly, normal pace — like a cheerful girlfriend/boyfriend reading the game to you.",
+      pitch:1.2, rate:1.02, prefer:["samantha","female","zira","google us english","karen","moira"],
+      intros:{ soft:["Okay, listen up, sweetie — here's your roll.","Ready, honey? Here's what you're going to do."],
+                dirty:["Okay, sweetie, this one's naughty — listen close.","Here's your roll, honey. It's a dirty one."],
+                bdsm:["Okay... deep breath, honey. Here's your BDSM roll. Remember, red means stop."] } },
+    sultry: { desc:"Sultry: slow, low and breathy — reads it like she means it.",
+      pitch:0.82, rate:0.8, prefer:["samantha","female","google uk english female","serena","allison","ava"],
+      intros:{ soft:["Mmm... come here and listen. Here's your roll.","Lean in, baby. Let me tell you what happens next."],
+                dirty:["Mmm, this one's filthy, baby. Listen to every word.","Oh, you're going to love this one. Here's your dirty little instruction."],
+                bdsm:["Listen very carefully, darling. This is the red level now... and here's what you're going to take."] } },
+    dominant: { desc:"Dominant: firm, low, commanding — orders, not suggestions. Built for BDSM.",
+      pitch:0.7, rate:0.86, prefer:["daniel","male","google uk english male","alex","fred","david"],
+      intros:{ soft:["Pay attention. Here's your instruction.","Listen. This is what you're doing. No arguing."],
+                dirty:["Eyes on me. Here's your order — and it's filthy.","You will listen, and then you will do exactly this."],
+                bdsm:["Silence. Kneel, listen, and obey. Here is your BDSM order.","You asked for the red level. Now take your instructions like you mean it. Red still means stop — everything else means GO."] } }
+  };
+  var vpreset = "sultry";
+  var allVoices = [];
+  var speakingNow = false;
+  function ttsSupported(){ return ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window); }
+  function setSpeakUI(on){
+    speakingNow = on;
+    listenBtn.classList.toggle('speaking', on);
+    listenBtn.innerHTML = on ? "🔊 Reading aloud…" : "🔊 Read this roll aloud";
+    stopSpeakBtn.style.display = on ? "" : "none";
+    listenNote.textContent = on ? ("Reading in your " + vpreset + " voice — tap Stop anytime. A new roll silences this one.") : "Hands busy? Tap to listen.";
+  }
+  function stopSpeaking(){ if(ttsSupported()){ try{ window.speechSynthesis.cancel(); }catch(e){} } if(speakingNow || true) setSpeakUI(false); }
+  function chosenVoice(){
+    var sel = document.getElementById('voiceSelect');
+    if(sel && sel.value){
+      for(var i=0;i<allVoices.length;i++){ if(allVoices[i].voiceURI === sel.value) return allVoices[i]; }
+    }
+    var pref = VOICE_PRESETS[vpreset].prefer;
+    for(var j=0;j<pref.length;j++){
+      for(var k=0;k<allVoices.length;k++){
+        if(allVoices[k].name.toLowerCase().indexOf(pref[j]) !== -1) return allVoices[k];
+      }
+    }
+    for(var m=0;m<allVoices.length;m++){ if(/^en/i.test(allVoices[m].lang)) return allVoices[m]; }
+    return allVoices.length ? allVoices[0] : null;
+  }
+  function isEnglishVoice(v){
+    if(!v || !v.lang) return false;
+    var lang = String(v.lang).replace(/_/g, '-').toLowerCase();
+    return lang === 'en' || lang.indexOf('en-') === 0;
+  }
+  function loadVoices(){
+    if(!ttsSupported()) return;
+    var rawVoices = window.speechSynthesis.getVoices() || [];
+    allVoices = rawVoices.filter(isEnglishVoice);
+    var sel = document.getElementById('voiceSelect');
+    var vc = document.getElementById('voiceCount');
+    if(!sel) return;
+    var cur = sel.value;
+    sel.innerHTML = '<option value="">Auto (personality picks)</option>';
+    allVoices.forEach(function(v){
+      var o = document.createElement('option'); o.value = v.voiceURI; o.textContent = v.name + " (" + v.lang + ")";
+      sel.appendChild(o);
+    });
+    sel.value = cur;
+    if(vc) vc.textContent = allVoices.length ? (allVoices.length + " English device voice" + (allVoices.length===1?"":"s") + " available on this device") : (rawVoices.length ? "No English device voices found on this device." : "No device voices found yet — your browser may load them after the first tap.");
+  }
+  if(ttsSupported()){ loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+  document.querySelectorAll('[data-vpreset]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('[data-vpreset]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      vpreset = btn.getAttribute('data-vpreset');
+      document.getElementById('vpresetDesc').textContent = VOICE_PRESETS[vpreset].desc;
+      if(speakingNow) stopSpeaking();
+    });
+  });
+  function pickIntro(){
+    var bank = VOICE_PRESETS[vpreset].intros;
+    var key = (heat === 'bdsm') ? 'bdsm' : ((heat === 'sweet') ? 'soft' : 'dirty');
+    var arr = bank[key] || bank.dirty;
+    return arr[Math.floor(Math.random()*arr.length)];
+  }
+  function speakRoll(){
+    if(!lastRoll) return;
+    if(!ttsSupported()){ listenNote.textContent = "Read-aloud isn't supported in this browser — try Chrome, Edge or Safari."; return; }
+    window.speechSynthesis.cancel();
+    var parts = [];
+    parts.push(pickIntro());
+    parts.push(partnerName(lastRoll.actor) + ": " + lastRoll.sentenceText);
+    if(lastRoll.detailText) parts.push("Do this: " + lastRoll.detailText);
+    if(lastRoll.hintText) parts.push("Where: " + lastRoll.hintText);
+    if(lastRoll.bonusTitle) parts.push("Bonus: " + lastRoll.bonusTitle + ". " + lastRoll.bonusText);
+    if(heat === 'bdsm') parts.push("Remember: red means stop completely. Skip anything that is too much. No shame in skipping.");
+    var u = new SpeechSynthesisUtterance(parts.join(" "));
+    var cfg = VOICE_PRESETS[vpreset];
+    u.pitch = cfg.pitch; u.rate = cfg.rate;
+    var v = chosenVoice(); if(v) u.voice = v;
+    u.onend = function(){ setSpeakUI(false); };
+    u.onerror = function(){ setSpeakUI(false); };
+    setSpeakUI(true);
+    setTimeout(function(){ try{ window.speechSynthesis.speak(u); }catch(e){ setSpeakUI(false); } }, 60);
+  }
+  listenBtn.addEventListener('click', function(){ if(speakingNow){ stopSpeaking(); } else { speakRoll(); } });
+  stopSpeakBtn.addEventListener('click', stopSpeaking);
+  window.addEventListener('pagehide', function(){ if(ttsSupported()){ try{ window.speechSynthesis.cancel(); }catch(e){} } });
+
+  function roll(){
+    if(rolling) return;
+    stopSpeaking();
+    listenWrap.classList.remove('show');
+    rolling = true;
+    rollBtn.disabled = true;
+    rollBtn.textContent = "Rolling…";
+    bonusCard.classList.remove('show');
+    detailCard.classList.remove('show');
+    var set = DATA[heat];
+    var actorNow = turn;
+    var recipPlayer = (actorNow === 1) ? 2 : 1;
+    var recipAnat = anatomy[recipPlayer];
+    var ai = idxPick(set.actions.length);
+    var wi = idxPick(set.wheres.length);
+    if(set.actions[ai].forceGenital){ wi = [0,1][idxPick(2)]; if(wi >= set.wheres.length) wi = 0; }
+    dieAction.classList.remove('rolling'); dieWhere.classList.remove('rolling');
+    void dieAction.offsetWidth;
+    dieAction.classList.add('rolling'); dieWhere.classList.add('rolling');
+
+    var cycles = 0;
+    var cycler = setInterval(function(){
+      wordA.textContent = R(pick(set.actions), 'word', recipAnat);
+      wordW.textContent = R(pick(set.wheres), 'word', recipAnat);
+      cycles++;
+      if(cycles > 8) clearInterval(cycler);
+    }, 75);
+
+    setTimeout(function(){
+      var action = set.actions[ai];
+      var where = set.wheres[wi];
+      var aWord = R(action, 'word', recipAnat), wWord = R(where, 'word', recipAnat);
+      var aPhrase = R(action, 'phrase', recipAnat), wPhrase = R(where, 'phrase', recipAnat);
+      wordA.textContent = aWord;
+      wordW.textContent = wWord;
+      var isMatch = (ai === wi);
+      sentence.innerHTML = '';
+      var aSpan = document.createElement('span'); aSpan.className='a'; aSpan.textContent = aPhrase;
+      sentence.appendChild(aSpan);
+      sentence.appendChild(document.createTextNode(' ' + wPhrase + '.'));
+      var detailText = R(action, 'detail', recipAnat) || '';
+      var hintText = stripFocusPrefix(R(where, 'hint', recipAnat) || '');
+      detailDoLabel.textContent = 'DO THIS — ' + aWord;
+      fillDetailText(detailDoText, detailText);
+      detailWhereLabel.textContent = 'WHERE — ' + wWord;
+      detailWhereText.textContent = hintText;
+      detailCard.classList.add('show');
+      bdsmNote.classList.toggle('show', heat === 'bdsm');
+      var bTitle = "", bText = "";
+      if(isMatch){
+        var pool = (heat === 'spicy') ? SPICY_POSITIONS : (heat === 'bdsm') ? BDSM_SCENES : POSITIONS;
+        var pos = pool[ai % pool.length];
+        bTitle = pos.title; bText = pos.text;
+        bonusTitle.textContent = pos.title;
+        bonusText.textContent = pos.text;
+        bonusTag.textContent = (heat === 'spicy') ? "Matching faces! Bonus — experimental fucking position" : (heat === 'bdsm') ? "Matching faces! Bonus — full kink scene" : "Matching faces! Bonus position";
+        bonusCard.classList.add('show');
+      }
+      lastRoll = { actor: actorNow, sentenceText: aPhrase + ' ' + wPhrase + '.', detailText: detailText, hintText: hintText, bonusTitle: bTitle, bonusText: bText };
+      listenWrap.classList.add('show');
+      hasRolled = true;
+      addHistory(actorNow, aWord, wWord, isMatch);
+      if(navigator.vibrate) { try{ navigator.vibrate(25); }catch(e){} }
+      turn = (turn === 1) ? 2 : 1;
+      setTurnLabel();
+      resetTimer();
+      rolling = false;
+      rollBtn.disabled = false;
+      rollBtn.innerHTML = "🎲 &nbsp;Roll Again";
+    }, 760);
+  }
+
+  rollBtn.addEventListener('click', roll);
+  document.getElementById('skipBtn').addEventListener('click', function(){
+    if(rolling) return;
+    if(hasRolled){
+      turn = (turn === 1) ? 2 : 1;
+      setTurnLabel();
+    }
+    roll();
+  });
+  [dieAction, dieWhere].forEach(function(d){
+    d.addEventListener('click', roll);
+    d.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); roll(); } });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.code==='Space' && !/BUTTON|INPUT/.test(document.activeElement.tagName)){ e.preventDefault(); roll(); }
+  });
+
+  var totalSecs = 30, remaining = 30, timerId = null, running = false;
+  var timerDisplay = document.getElementById('timerDisplay');
+  var timerBar = document.getElementById('timerBar');
+  var timerToggle = document.getElementById('timerToggle');
+
+  function fmt(s){ return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); }
+  function paintTimer(){
+    timerDisplay.textContent = fmt(remaining);
+    timerBar.style.width = (totalSecs ? (remaining/totalSecs*100) : 0) + '%';
+  }
+  function stopTimer(){ if(timerId){ clearInterval(timerId); timerId=null; } running=false; timerToggle.textContent='Start'; }
+  function resetTimer(){ stopTimer(); remaining = totalSecs; paintTimer(); }
+  document.querySelectorAll('[data-secs]').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      document.querySelectorAll('[data-secs]').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      totalSecs = parseInt(chip.getAttribute('data-secs'),10);
+      resetTimer();
+    });
+  });
+  timerToggle.addEventListener('click', function(){
+    if(running){ stopTimer(); return; }
+    if(remaining <= 0) remaining = totalSecs;
+    running = true; timerToggle.textContent = 'Pause';
+    timerId = setInterval(function(){
+      remaining--;
+      paintTimer();
+      if(remaining <= 0){
+        stopTimer();
+        timerDisplay.textContent = "Time — swap turns";
+        if(navigator.vibrate){ try{ navigator.vibrate([60,40,60]); }catch(e){} }
+      }
+    }, 1000);
+  });
+  document.getElementById('timerReset').addEventListener('click', resetTimer);
+  var bdsmToggle = document.getElementById('bdsmToggle');
+  var bdsmContent = document.getElementById('bdsmContent');
+  if(bdsmToggle && bdsmContent){
+    bdsmToggle.addEventListener('click', function(){
+      var open = bdsmToggle.getAttribute('aria-expanded') === 'true';
+      bdsmToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      bdsmContent.hidden = open;
+    });
+  }
+  var howtoToggle = document.getElementById('howtoToggle');
+  var howtoContent = document.getElementById('howtoContent');
+  if(howtoToggle && howtoContent){
+    howtoToggle.addEventListener('click', function(){
+      var open = howtoToggle.getAttribute('aria-expanded') === 'true';
+      howtoToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      howtoContent.hidden = open;
+    });
+  }
+  var installToggle = document.getElementById('installToggle');
+  var installContent = document.getElementById('installContent');
+  function openInstall(){
+    if(installToggle && installContent){
+      installToggle.setAttribute('aria-expanded', 'true');
+      installContent.hidden = false;
+    }
+  }
+  if(installToggle && installContent){
+    installToggle.addEventListener('click', function(){
+      var open = installToggle.getAttribute('aria-expanded') === 'true';
+      installToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      installContent.hidden = open;
+    });
+  }
+  if(window.location && window.location.hash === '#install'){ openInstall(); }
+  paintTimer();
+  setTurnLabel();
+  applyHeatTheme();
+})();
+</script>
+<script>
+(function(){
+  /* ===== Installable app (PWA): install prompt, installed detection, theme-colour sync ===== */
+  var installStatus = document.getElementById('installStatus');
+  var themeMeta = document.getElementById('themeColorMeta');
+
+  function isStandalone(){
+    return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+  }
+  function showInstalled(){
+    if(installStatus) installStatus.innerHTML = '<strong>✓ You are running the installed app</strong> — standalone, full-screen, launched from your home screen.';
+  }
+  if(isStandalone()){ showInstalled(); }
+  if(window.matchMedia){
+    var mq = window.matchMedia('(display-mode: standalone)');
+    var onMq = function(e){ if(e.matches) showInstalled(); };
+    if(mq.addEventListener) mq.addEventListener('change', onMq);
+    else if(mq.addListener) mq.addListener(onMq);
+  }
+
+  window.addEventListener('appinstalled', showInstalled);
+
+  /* Keep the browser / status-bar theme colour in step with the page theme:
+     purple-pink normally, deep red when BDSM mode flips the whole site red. */
+  function syncThemeColor(){
+    if(!themeMeta) return;
+    themeMeta.setAttribute('content', document.documentElement.classList.contains('bdsm-mode') ? '#450a0a' : '#a21caf');
+  }
+  if('MutationObserver' in window){
+    new MutationObserver(syncThemeColor).observe(document.documentElement, {attributes:true, attributeFilter:['class']});
+  }
+  syncThemeColor();
+})();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function (e) { console.warn("SW registration failed", e); });
+  });
+}
+</script>
+</body>
+</html>
