@@ -200,8 +200,6 @@
   .install-cols ol{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.95rem}
   .install-cols ol li{margin:6px 0}
   .install-cols li strong{color:var(--ink)}
-  .install-note{margin-top:16px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.92rem;color:var(--muted)}
-  .install-note strong{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -388,9 +386,16 @@
           </ol>
         </div>
       </div>
-      <div class="install-note"><strong>About a real Android .apk:</strong> this page itself is not an .apk file and there is nothing to download here. It is built Android-ready — installable manifest, 192px &amp; 512px icons including a maskable icon, and standalone display — so it can later be wrapped into a signed .apk (a TWA / Trusted Web Activity package) using these same name, icons and colours. That wrapper is a separate follow-on build; installing from Chrome above gives you the same full-screen app experience right now.</div>
     </div>
   </section>
+  <script>
+  (function(){
+    if(document.referrer && document.referrer.indexOf('android-app://') === 0){
+      var installSection = document.getElementById('install');
+      if(installSection) installSection.style.display = 'none';
+    }
+  })();
+  </script>
 
 </div>
 
