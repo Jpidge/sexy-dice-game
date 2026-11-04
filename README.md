@@ -1,30 +1,12 @@
 # Sexy Dice Game
 
 A two-dice game for two consenting adult partners. Roll two 12-face dice —
-one picks the action, the other picks where. Per-player anatomy toggles
-(Dick/Pussy) make the roll wording body-specific for each partner. Includes
+one picks the action, the other picks where. Includes heat levels,
 read-aloud with voice personalities, a turn timer, Skip & Reroll, and bonus
 cards on matching faces.
 
 **Play it:** https://jpidge.github.io/sexy-dice-game/ — GitHub Pages,
 published from the `main` branch of this repo.
-
-## Heat levels
-
-- **Sweet** — gentle.
-- **Spicy** — kinkier sensory play.
-- **Wild** — explicit oral/fucking content, plus experimental-position
-  bonus cards.
-- **BDSM** — the dirtiest level: kink scenes, a safeword check-in card,
-  and the whole site flips to a red theme.
-
-The Spicy and Wild contents were swapped on 2026-11-01 so the ladder
-matches the labels (Spicy used to hold the explicit deck).
-
-## Theme
-
-Purple backgrounds with softened dusty-rose / pastel-orchid pink accents
-(#a95284, #d99ac0). Selecting BDSM switches the site to deep red.
 
 ## Install as a web app
 
